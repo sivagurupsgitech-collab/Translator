@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LangLite</title>
+    <meta name="description" content="LangLite is a small multilingual text translator." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="translator-card" aria-label="Language translator">
+        <header class="app-header">
+          <h1>LangLite</h1>
+          <p>Simple translation, made easy.</p>
+        </header>
+
+        <div class="language-row">
+          <div class="field-group">
+            <label for="fromLang">From</label>
+            <select id="fromLang" aria-label="Select source language">
+              <option value="auto">Auto Detect</option>
+              <option value="English">English</option>
+              <option value="Tamil">Tamil (தமிழ்)</option>
+              <option value="Hindi">Hindi (हिन्दी)</option>
+              <option value="Malayalam">Malayalam (മലയാളം)</option>
+              <option value="French">French (Français)</option>
+              <option value="German">German (Deutsch)</option>
+              <option value="Japanese">Japanese (日本語)</option>
+            </select>
+          </div>
+
+          <button id="swapBtn" class="icon-btn" type="button" aria-label="Swap languages">⇄</button>
+
+          <div class="field-group">
+            <label for="toLang">To</label>
+            <select id="toLang" aria-label="Select target language">
+              <option value="English">English</option>
+              <option value="Tamil">Tamil (தமிழ்)</option>
+              <option value="Hindi">Hindi (हिन्दी)</option>
+              <option value="Malayalam">Malayalam (മലയാളം)</option>
+              <option value="French">French (Français)</option>
+              <option value="German">German (Deutsch)</option>
+              <option value="Japanese">Japanese (日本語)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="input-panel">
+          <textarea
+            id="sourceText"
+            maxlength="2000"
+            rows="7"
+            placeholder="Type or paste your text here..."
+            aria-label="Text to translate"
+          ></textarea>
+
+          <div class="toolbar">
+            <span id="charCount">0 / 2000</span>
+            <button id="clearBtn" class="secondary-btn" type="button">Clear</button>
+          </div>
+        </div>
+
+        <button id="translateBtn" class="primary-btn" type="button">
+          Translate
+        </button>
+
+        <div class="result-panel">
+          <label for="resultText">English Translation</label>
+          <textarea
+            id="resultText"
+            rows="7"
+            readonly
+            placeholder="Translation will appear here..."
+            aria-label="Translated text"
+          ></textarea>
+        </div>
+
+        <div class="action-row">
+          <button id="copyBtn" class="secondary-btn" type="button">📋 Copy</button>
+          <button id="listenBtn" class="secondary-btn" type="button">🔊 Listen</button>
+        </div>
+
+        <div id="statusMessage" class="status-message" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
